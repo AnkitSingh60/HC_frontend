@@ -1,6 +1,4 @@
 * {
-  /* margin: 0; */
-  /* padding: 0; */
   box-sizing: border-box;
 }
 
@@ -17,3 +15,12 @@
 .card {
   margin: 20px;
 }
+
+.CardContainer{
+  margin: auto;
+  margin-top: 100px;
+  width: 50%;
+  text-align: center;
+}
+
+

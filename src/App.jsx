@@ -1,29 +1,23 @@
+import 'antd/dist/antd.css';
 import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Card from './components/Card';
+import ModalView from './components/ModalView';
 
 function App() {
-  const [post, setPost] = useState([])
-
-  const fetchData = async () => {
-    try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-      const data = await res.json();
-      // console.log('data:', data)
-      setPost(data);
-    } catch (error) {
-      console.log('error:', error)
-    }
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
+  
   return (
-    <div className="App">
-      <Card post={post} />
-    </div>
+    <>
+  
+      <Routes>
+
+        <Route path="/" element={<Card/>}/>
+        <Route path="/modalDetail/:id" element={<ModalView/>}/>
+
+      </Routes>
+
+    </>
   );
 }
 
