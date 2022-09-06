@@ -2,6 +2,10 @@ import React from 'react'
 
 const Card = ({ post }) => {
     // console.log('post:', post)
+    const handelView = (id) => {
+        console.log("hey kiddo");
+        console.log('id:', id)
+    }
     return (
         <div className='mainContainer'>
         {
@@ -13,7 +17,7 @@ const Card = ({ post }) => {
                 <div className="card-body">
                     <h5 className="card-title">{item.title.slice(0, 30)}</h5>
                     <p className="card-text">{item.body.slice(0, 60)}</p>
-                    <a href="#" className="btn btn-primary">View</a>
+                    <button className="btn btn-primary" onClick={() =>handelView((item.id))}>View</button>
                 </div>
             </div>
                 )
