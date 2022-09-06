@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 const ModalView = ({ id }) => {
@@ -8,7 +8,6 @@ const ModalView = ({ id }) => {
   const [data, setData] = useState("")
 
   const params = useParams()
-  const navigate = useNavigate()
 
   const getData = async () => {
     let res = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
@@ -20,8 +19,6 @@ const ModalView = ({ id }) => {
   useEffect(() => {
     getData()
   }, [])
-
-
   return (
     <div className="CardContainer">
     <a href="/" className="btn btn-primary" >Home</a>
@@ -31,9 +28,6 @@ const ModalView = ({ id }) => {
           <p><strong>Name-</strong> {data.name} </p>
           <p><strong>Phone-</strong> {data.phone} </p>
           <p><strong>Website-</strong> {data.website} </p>
-          
-
-
         </div>
       </div>
 
